@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход</title>
+  <link rel="stylesheet" href="styleregister.css">
+</head>
+<body>
+  <div class="container">
+    <div class="right">
+      <img src="https://i.ibb.co.com/Fb7t1kML/2025-10-01-001346.png" alt="login" width="250">
+    </div>
+
+    <div class="left">
+      <div class="form-box">
+        <h2>Регистрация</h2>
+        <p>Зарегистрируйся на курсы Figma</p>
+        <form id="registerForm">
+          <input type="text" id="name" placeholder="Имя" required>
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="password" id="password" placeholder="Пароль" required>
+          <button type="submit" id="registerBtn">Регистрация</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", password);
+
+      alert("Регистрация успешна! Теперь войдите через логин.");
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <img src="https://i.ibb.co.com/Fb7t1kML/2025-10-01-001346.png" alt="login" width="250">
+    </div>
+
+    <div class="right">
+      <div class="form-box">
+        <h2>Вход</h2>
+        <p>Добро пожаловать на Course</p>
+        <form id="loginForm">
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="password" id="password" placeholder="Пароль" required>
+          <button type="submit">Логин</button>
+        </form>
+        <div class="links">
+          <a href="register.html">Регистрация</a>
+          <a href="sborsit.html">Забыл пароль</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+
+      let savedEmail = localStorage.getItem("email");
+      let savedPassword = localStorage.getItem("password");
+
+      if (email === savedEmail && password === savedPassword) {
+        window.location.href = "https://streamable.com/lf027o";
+      } else {
+        alert("Неверный email или пароль. Зарегистрируйтесь сначала.");
+      }
+    });
+  </script>
+</body>
+</html>

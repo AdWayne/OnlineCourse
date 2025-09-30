@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Забыл пароль</title>
+    <link rel="stylesheet" href="sbrositstyle.css">
+</head>
+<body>
+     <div class="left">
+      <div class="form-box">
+        <h2>Забыл пароль</h2>
+        <p>Восстановите пароль</p>
+        <form id="ZabilparolForm">
+          <input type="email" id="email" placeholder="Email" required>
+          <button type="submit" id="sbrositPrl">Сбросить пароль</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+    document.getElementById("sbrositPrl").addEventListener("click", function (e) {
+      e.preventDefault();
+
+      let email = document.getElementById("email").value;
+
+      localStorage.setItem("email", email);
+
+      window.location.href = "index.html";
+    });
+</script>
+</html>
